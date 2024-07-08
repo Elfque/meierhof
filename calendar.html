@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation System</title>
+    <style>
+      .container {
+        display: flex;
+        gap: 8px;
+      }
+      .child-container {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: 2.5rem;
+        text-align: center;
+      }
+      .line {
+        width: 100%;
+        height: 2px;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hour-container child-container">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="decrease-hour"
+          width="15px"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 15.75 7.5-7.5 7.5 7.5"
+          />
+        </svg>
+
+        <div class="previous-hour">05</div>
+        <div class="line"></div>
+        <div class="current-hour">06</div>
+        <div class="line"></div>
+        <div class="next-hour">07</div>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="increase-hour"
+          width="15px"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+      </div>
+      <div class="minute-container child-container">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="decrease-minute"
+          width="15px"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 15.75 7.5-7.5 7.5 7.5"
+          />
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="increase-minute"
+          width="15px"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <script>
+      const prevHourBtn = document.querySelector(".decrease-hour");
+      const nextHourBtn = document.querySelector(".increase-hour");
+
+      const currentHourDiv = document.querySelector(".current-hour");
+      const previousHourDiv = document.querySelector(".previous-hour");
+      const nextHourDiv = document.querySelector(".next-hour");
+
+      let hourInTime = 5;
+      let minuteInTme = 6;
+
+      const showTime = () => {
+        currentHourDiv.textContent = `${
+          hourInTime < 10 ? "0" : ""
+        }${hourInTime}`;
+        previousHourDiv.textContent = `${
+          hourInTime - 1 < 10 && hourInTime !== 0 ? "0" : ""
+        }${hourInTime === 0 ? 23 : hourInTime - 1}`;
+        nextHourDiv.textContent = `${
+          hourInTime + 1 < 10 || hourInTime == 23 ? "0" : ""
+        }${hourInTime === 23 ? 0 : hourInTime + 1}`;
+      };
+
+      prevHourBtn.addEventListener("click", () => {
+        if (hourInTime === 0) {
+          hourInTime = 23;
+        } else {
+          hourInTime--;
+        }
+
+        showTime();
+      });
+
+      nextHourBtn.addEventListener("click", () => {
+        if (hourInTime === 23) {
+          hourInTime = 0;
+        } else {
+          hourInTime++;
+        }
+        showTime();
+      });
+    </script>
+  </body>
+</html>
