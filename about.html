@@ -631,6 +631,9 @@
       <!-- dynamic content end -->
 
       <div class="overlay"></div>
+      <div class="overlay loading">
+        <div class="loader"></div>
+      </div>
       <div class="modals starting-modal">
         <div class="modal-top">
           <button class="close-btn">Close</button>
@@ -838,6 +841,17 @@
         </div>
       </div>
 
+      <div class="modals small success-modal">
+        <div class="text-center p-3">
+          <div>Congratulations</div>
+          <div>Your reservations has been made succesfully</div>
+        </div>
+
+        <div class="modal-bottom">
+          <button class="py-3 cols-2 success-btn">OK</button>
+        </div>
+      </div>
+
       <div class="modals available-modal">
         <div class="modal-top">
           <button class="close-btn">Close</button>
@@ -949,6 +963,7 @@
             <input
               type="text"
               name="first-name"
+              id="first-name"
               class="line-input"
               placeholder="First name"
               required
@@ -956,6 +971,7 @@
             <input
               type="text"
               name="last-name"
+              id="last-name"
               class="line-input"
               placeholder="Last name"
               required
@@ -963,6 +979,7 @@
             <input
               type="email"
               name="email"
+              id="email"
               class="line-input"
               placeholder="Email"
               required
@@ -970,6 +987,7 @@
             <input
               type="tel"
               name="phone"
+              id="phone"
               class="line-input"
               placeholder="Phone"
               required
@@ -977,6 +995,7 @@
             <input
               type="text"
               name="company"
+              id="company"
               class="line-input"
               placeholder="Company"
             />

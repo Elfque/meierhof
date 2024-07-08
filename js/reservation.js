@@ -7,6 +7,7 @@ const cannotPlaceModal = document.querySelector(".cannot-offer-seat-modal");
 const informationModal = document.querySelector(".information-modal");
 const availaleModal = document.querySelector(".available-modal");
 const moreModal = document.querySelector(".more-than-modal");
+const successModal = document.querySelector(".success-modal");
 const overlay = document.querySelector(".overlay");
 const peopleSpan = document.querySelectorAll(".people-number");
 const dateSpan = document.querySelectorAll(".date-div");
@@ -21,12 +22,14 @@ const dateCancelBtn = document.querySelector(".date-cancel-btn");
 const timeSetBtn = document.querySelector(".time-set-btn");
 const timeCancelBtn = document.querySelector(".time-cancel-btn");
 const moreThanBtn = document.querySelector(".more-than-btn");
+const successBtn = document.querySelector(".success-btn");
 const bookBtn = document.querySelector(".book-btn");
 const openPeople = document.querySelector(".open-people");
 const openDate = document.querySelector(".open-date");
 const openTime = document.querySelector(".open-time");
 const currentMonthDiv = document.querySelector(".current-month");
 const calendarContainer = document.getElementById("calendar");
+const loadingOverlay = document.querySelector(".loading");
 
 const nextMonthBtn = document.querySelector(".next-month");
 const prevMonthBtn = document.querySelector(".prev-month");
@@ -37,6 +40,19 @@ const infoBackBtn = document.querySelector(".info-back-btn");
 const singleAvailability = document.querySelectorAll(".single-time-available");
 const closeBtn = document.querySelectorAll(".close-btn");
 const openMoreTimeBtn = document.querySelector(".open-more-time");
+
+// INPUTS
+const firstNameInput = document.querySelector("#first-name");
+const lastNameInput = document.querySelector("#last-name");
+const emailInput = document.querySelector("#email");
+const phoneInput = document.querySelector("#phone");
+const companyInput = document.querySelector("#company");
+
+const BASE_URL = "https://reservation-be-1.onrender.com";
+// const BASE_URL = "http://localhost:4000";
+const headers = {
+  "Content-Type": "application/json",
+};
 
 closeBtn.forEach((item) => {
   item.addEventListener("click", () => {
@@ -55,6 +71,85 @@ closeBtn.forEach((item) => {
 let reservationDate = "";
 let reservationTime = "";
 let people = 4;
+let weekReserves;
+
+const checkAvailability = async () => {
+  const data = {
+    date: reservationDate,
+    time: reservationTime,
+    people,
+  };
+  loadingOverlay.classList.add("active");
+
+  fetch(`${BASE_URL}/availability`, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers,
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data.msg === "Success") {
+        informationModal.classList.add("active");
+      } else {
+        cannotPlaceModal.classList.add("active");
+      }
+      loadingOverlay.classList.remove("active");
+      reservationHome.classList.remove("active");
+    });
+};
+
+const placeBooking = () => {
+  const firstName = firstNameInput.value;
+  const lastName = lastNameInput.value;
+  const email = emailInput.value;
+  const phone = phoneInput.value;
+  const company = companyInput.value;
+
+  if (!firstName.trim() || !lastName.trim() || !email.trim() || !phone) {
+    alert("All fields should be filled");
+    return;
+  }
+  loadingOverlay.classList.add("active");
+  const data = {
+    date: reservationDate,
+    time: reservationTime,
+    people,
+    firstName,
+    lastName,
+    email,
+    phone,
+    company,
+  };
+
+  fetch(`${BASE_URL}/create`, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers,
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      loadingOverlay.classList.remove("active");
+      successModal.classList.add("active");
+      informationModal.classList.remove("active");
+      //   alert("Reservation has been made successfully");
+    });
+};
+
+const getReservationsForTheWeek = () => {
+  fetch(`${BASE_URL}/week`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      weekReserves = data;
+      appendDates();
+    });
+};
+getReservationsForTheWeek();
 
 const closePeopleModal = () => {
   peopleModal.classList.remove("active");
@@ -65,6 +160,11 @@ const closeDateModal = () => {
   dateModal.classList.remove("active");
   reservationHome.classList.add("active");
 };
+
+successBtn.addEventListener("click", () => {
+  overlay.classList.remove("active");
+  successModal.classList.remove("active");
+});
 
 dateSetBtn.addEventListener("click", closeDateModal);
 dateCancelBtn.addEventListener("click", closeDateModal);
@@ -93,8 +193,7 @@ infoBackBtn.addEventListener("click", () => {
 });
 
 infoBookBtn.addEventListener("click", () => {
-  overlay.classList.remove("active");
-  informationModal.classList.remove("active");
+  placeBooking();
 });
 
 openMoreTimeBtn.addEventListener("click", () => {
@@ -105,14 +204,7 @@ openMoreTimeBtn.addEventListener("click", () => {
 peopleCancelBtn.addEventListener("click", closePeopleModal);
 peopleSetBtn.addEventListener("click", closePeopleModal);
 
-bookBtn.addEventListener("click", () => {
-  //   if (people > 10) {
-  // } else {
-  //     informationModal.classList.add("active");
-  // }
-  cannotPlaceModal.classList.add("active");
-  reservationHome.classList.remove("active");
-});
+bookBtn.addEventListener("click", checkAvailability);
 
 const setPeopleNumber = () => {
   peopleSpan.forEach((item) => {
@@ -218,7 +310,7 @@ const showDate = () => {
 };
 
 const currentDate = new Date();
-let currentMonth = currentDate.getMonth();
+let currentMonth = currentDate.getMonth() + 1;
 let currentYear = currentDate.getFullYear();
 
 currentMonthDiv.textContent = `${
@@ -356,7 +448,7 @@ const times = {
     ],
   },
 };
-// const times = ["10:00", "15:00", "15:40"];
+
 const daysContainer = document.getElementById("daysContainer");
 
 function getCurrentWeekDates() {
@@ -369,6 +461,7 @@ function getCurrentWeekDates() {
     date.setDate(currentDate.getDate() - currentDayOfWeek + i);
     currentWeekDates.push(date);
   }
+
   return currentWeekDates;
 }
 
@@ -379,74 +472,98 @@ function formatDate(date) {
 
 const currentWeekDates = getCurrentWeekDates();
 
-daysOfWeek.forEach((day, index) => {
-  const dayContainer = document.createElement("div");
-  dayContainer.className = "avaiable-day mt-4";
+const formatRealDate = (date) => {
+  const newDate = `${date.getDate()}/${
+    date.getMonth() + 1
+  }/${date.getFullYear()}`;
+  return newDate;
+};
 
-  const dayTitle = document.createElement("div");
-  dayTitle.className = "text-center py-1 available-date";
-  dayTitle.textContent = `${day} (${formatDate(currentWeekDates[index])})`;
-
-  dayContainer.appendChild(dayTitle);
-
-  const timesContainer = document.createElement("div");
-  timesContainer.className = "times";
-
-  Object.values(times).forEach((time) => {
-    const contain = document.createElement("div");
-    const timeType = document.createElement("div");
-    timeType.className =
-      "d-flex justify-content-between px-2 py-2 available-sch";
-
-    timeType.addEventListener("click", (e) => {
-      const parent = timeType.parentElement;
-      const grid = parent.querySelector(".available-grid");
-      grid.classList.toggle("active");
-    });
-
-    const times = document.createElement("div");
-    times.className = "available-grid";
-
-    time.times.forEach((item) => {
-      const timeElement = document.createElement("div");
-      timeElement.className = "single-time-available";
-      timeElement.textContent = item;
-      timeElement.addEventListener("click", function () {
-        if (people > 10) {
-          moreModal.classList.add("active");
-        } else {
-          informationModal.classList.add("active");
-        }
-
-        availaleModal.classList.remove("active");
-      });
-      times.appendChild(timeElement);
-    });
-
-    timeType.innerHTML = `<div class="flex">
-   ${time.name} <span class="fw-bold ml-2">${time.timeRange}</span>
- </div>
-                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  width="20"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                  />
-                </svg>`;
-
-    contain.appendChild(timeType);
-    contain.appendChild(times);
-
-    timesContainer.appendChild(contain);
+const checkIfReserved = (date, time) => {
+  const ifReserved = weekReserves.some((item) => {
+    return item.date === date && item.time.replaceAll(" ", "") === time;
   });
+  return ifReserved;
+};
 
-  dayContainer.appendChild(timesContainer);
-  daysContainer.appendChild(dayContainer);
-});
+function appendDates() {
+  daysOfWeek.forEach((day, index) => {
+    const dayContainer = document.createElement("div");
+    dayContainer.className = "avaiable-day mt-4";
+
+    const dayTitle = document.createElement("div");
+    dayTitle.className = "text-center py-1 available-date";
+    dayTitle.textContent = `${day} (${formatDate(currentWeekDates[index])})`;
+
+    dayContainer.appendChild(dayTitle);
+
+    const timesContainer = document.createElement("div");
+    timesContainer.className = "times";
+
+    Object.values(times).forEach((time) => {
+      const contain = document.createElement("div");
+      const timeType = document.createElement("div");
+      timeType.className =
+        "d-flex justify-content-between px-2 py-2 available-sch";
+
+      timeType.addEventListener("click", (e) => {
+        const parent = timeType.parentElement;
+        const grid = parent.querySelector(".available-grid");
+        grid.classList.toggle("active");
+      });
+
+      const times = document.createElement("div");
+      times.className = "available-grid";
+
+      time.times.forEach((item) => {
+        const currentDate = formatRealDate(currentWeekDates[index]);
+        const isReserved = checkIfReserved(currentDate, item);
+        if (isReserved) return;
+
+        const timeElement = document.createElement("div");
+        timeElement.className = "single-time-available";
+        timeElement.textContent = item;
+        timeElement.addEventListener("click", function () {
+          if (people > 10) {
+            moreModal.classList.add("active");
+          } else {
+            reservationTime = item;
+            reservationDate = currentDate;
+            showTime();
+            showDate();
+            informationModal.classList.add("active");
+          }
+
+          availaleModal.classList.remove("active");
+        });
+        times.appendChild(timeElement);
+      });
+
+      timeType.innerHTML = `<div class="flex">
+       ${time.name} <span class="fw-bold ml-2">${time.timeRange}</span>
+     </div>
+                     <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      width="20"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                      />
+                    </svg>`;
+
+      contain.appendChild(timeType);
+      contain.appendChild(times);
+
+      timesContainer.appendChild(contain);
+    });
+
+    dayContainer.appendChild(timesContainer);
+    daysContainer.appendChild(dayContainer);
+  });
+}

@@ -4970,3 +4970,27 @@ illustration 9
   padding: 4px 8px;
   margin: 0 5px;
 }
+
+.overlay.loading {
+  z-index: 4;
+  background-color: #000000b3;
+}
+.overlay.loading.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #ffffff #ffffff00;
+  animation: l1 1s infinite;
+}
+@keyframes l1 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
