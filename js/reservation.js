@@ -100,6 +100,18 @@ const checkAvailability = async () => {
     });
 };
 
+const getReservationsForTheWeek = () => {
+  fetch(`${BASE_URL}/week`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      weekReserves = data;
+      appendDates();
+    });
+};
+getReservationsForTheWeek();
+
 const placeBooking = () => {
   const firstName = firstNameInput.value;
   const lastName = lastNameInput.value;
@@ -131,25 +143,13 @@ const placeBooking = () => {
     .then((res) => {
       return res.json();
     })
-    .then((data) => {
+    .then(() => {
       loadingOverlay.classList.remove("active");
       successModal.classList.add("active");
       informationModal.classList.remove("active");
-      //   alert("Reservation has been made successfully");
+      getReservationsForTheWeek();
     });
 };
-
-const getReservationsForTheWeek = () => {
-  fetch(`${BASE_URL}/week`)
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      weekReserves = data;
-      appendDates();
-    });
-};
-getReservationsForTheWeek();
 
 const closePeopleModal = () => {
   peopleModal.classList.remove("active");
@@ -413,7 +413,7 @@ const daysOfWeek = [
 const times = {
   lunch: {
     name: "Lunch",
-    timeRange: "11:30 - 16:00",
+    timeRange: "11:30 - 14:00",
     times: [
       "11:30",
       "11:45",
@@ -430,7 +430,7 @@ const times = {
   },
   dinner: {
     name: "Dinner",
-    timeRange: "16:00 - 00:00",
+    timeRange: "16:00 - 22:00",
     times: [
       "18:00",
       "18:15",
@@ -453,12 +453,11 @@ const daysContainer = document.getElementById("daysContainer");
 
 function getCurrentWeekDates() {
   const currentDate = new Date();
-  const currentDayOfWeek = currentDate.getDay();
   const currentWeekDates = [];
 
   for (let i = 0; i < 7; i++) {
     const date = new Date(currentDate);
-    date.setDate(currentDate.getDate() - currentDayOfWeek + i);
+    date.setDate(currentDate.getDate() + i);
     currentWeekDates.push(date);
   }
 
@@ -487,13 +486,16 @@ const checkIfReserved = (date, time) => {
 };
 
 function appendDates() {
-  daysOfWeek.forEach((day, index) => {
+  daysContainer.innerHTML = "";
+  daysOfWeek.forEach((_, index) => {
     const dayContainer = document.createElement("div");
     dayContainer.className = "avaiable-day mt-4";
 
     const dayTitle = document.createElement("div");
     dayTitle.className = "text-center py-1 available-date";
-    dayTitle.textContent = `${day} (${formatDate(currentWeekDates[index])})`;
+    dayTitle.textContent = `${
+      daysOfWeek[currentWeekDates[index].getDay()]
+    } (${formatDate(currentWeekDates[index])})`;
 
     dayContainer.appendChild(dayTitle);
 

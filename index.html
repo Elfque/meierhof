@@ -1,587 +1,1219 @@
 <!DOCTYPE html>
 <html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- color of address bar in mobile browser -->
+    <meta name="theme-color" content="#F5C332" />
+    <!-- favicon  -->
+    <link
+      rel="shortcut icon"
+      href="img/ui/meierhof logo.png"
+      type="image/x-icon"
+    />
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap.min.css" />
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css" />
+    <!-- datepicker css -->
+    <link rel="stylesheet" href="css/plugins/datepicker.css" />
+    <!-- mapbox css -->
+    <link href="css/plugins/mapbox-style.css" rel="stylesheet" />
+    <!-- fancybox css -->
+    <link rel="stylesheet" href="css/plugins/fancybox.min.css" />
+    <!-- starbelly css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- page title -->
+    <title>Hotel & Ristorante MEIERHOF Victoria</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- color of address bar in mobile browser -->
-  <meta name="theme-color" content="#F5C332">
-  <!-- favicon  -->
-  <link rel="shortcut icon" href="img/ui/meierhof logo.png" type="image/x-icon">
-  <!-- font awesome css -->
-  <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
-  <!-- bootstrap css -->
-  <link rel="stylesheet" href="css/plugins/bootstrap.min.css">
-  <!-- swiper css -->
-  <link rel="stylesheet" href="css/plugins/swiper.min.css">
-  <!-- datepicker css -->
-  <link rel="stylesheet" href="css/plugins/datepicker.css">
-  <!-- mapbox css -->
-  <link href="css/plugins/mapbox-style.css" rel='stylesheet'>
-  <!-- fancybox css -->
-  <link rel="stylesheet" href="css/plugins/fancybox.min.css">
-  <!-- starbelly css -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- page title -->
-  <title>Hotel & Ristorante MEIERHOF Victoria</title>
-</head>
-
-<body>
-  <!-- app wrapper -->
-  <div class="sb-app">
-    <!-- preloader -->
-    <div class="sb-preloader">
-      <div class="sb-preloader-bg"></div>
-      <div class="sb-preloader-body">
-        <div class="sb-loading">
-          <div class="sb-percent"><span class="sb-preloader-number" data-count="101">00</span><span>%</span></div>
-        </div>
-        <div class="sb-loading-bar">
-          <div class="sb-bar"></div>
-        </div>
-      </div>
-    </div>
-    <!-- preloader end -->
-    <!-- click effect -->
-    <div class="sb-click-effect"></div>
-    <!-- loader -->
-    <div class="sb-load"></div>
-    
-    <!-- top bar -->
-    <div class="sb-top-bar-frame">
-      <div class="sb-top-bar-bg"></div>
-      <div class="container">
-        <div class="sb-top-bar">
-          <a href="index.html" class="sb-logo-frame">
-            <!-- logo img -->
-            <img src="img/ui/meierhof logo.png" alt="MEIERHOF VICTORIA">
-          </a>
-          <!-- hamburger menu icon for mobile -->
-          <div class="sb-menu-toggle" id="sb-menu-toggle">
-            &#9776;
+  <body>
+    <!-- app wrapper -->
+    <div class="sb-app">
+      <!-- preloader -->
+      <div class="sb-preloader">
+        <div class="sb-preloader-bg"></div>
+        <div class="sb-preloader-body">
+          <div class="sb-loading">
+            <div class="sb-percent">
+              <span class="sb-preloader-number" data-count="101">00</span
+              ><span>%</span>
+            </div>
           </div>
-          <!-- menu -->
-          <div class="sb-right-side" id="sb-right-side">
-            <nav id="sb-dynamic-menu" class="sb-menu-transition">
-              <ul class="sb-navigation">
-                <li><a href="index.html" data-no-swup>Home</a></li>
-                <li><a href="about.html" data-no-swup>About</a></li>
-                <li><a href="https://meierhof-victoria.ch/speise.pdf" target="_blank" data-no-swup>Menu</a></li>
-                <li><a href="imprint.html" data-no-swup>Imprint</a></li>
-                <li><a href="hotel.html" data-no-swup>Hotel</a></li>
-                <li><a href="https://meierhof-victoria.ch/sommer.pdf" target="_blank" data-no-swup>Season</a></li>
-                <li><a href="contact.html" data-no-swup>Contact</a></li>
-                <li><a href="https://meierhof-victoria.ch/tagesmenu.pdf" target="_blank" data-no-swup>Daily&nbsp;Menu</a></li>
-                <li><a href="https://meierhof-victoria.ch/Weinkarte.pdf" target="_blank" data-no-swup>Wine&nbsp;List</a></li>
-              </ul>
-            </nav>
+          <div class="sb-loading-bar">
+            <div class="sb-bar"></div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- sidebar menu for mobile -->
-    <div class="sb-sidebar-menu" id="sb-sidebar-menu">
-      <span class="sb-close-btn" id="sb-close-btn">&times;</span>
-      <nav class="sb-sidebar-nav">
-        <ul>
-          <li><a href="index.html" data-no-swup>Home</a></li>
-          <li><a href="about.html" data-no-swup>About</a></li>
-          <li><a href="https://meierhof-victoria.ch/speise.pdf" target="_blank" data-no-swup>Menu</a></li>
-          <li><a href="imprint.html" data-no-swup>Imprint</a></li>
-          <li><a href="hotel.html" data-no-swup>Hotel</a></li>
-          <li><a href="https://meierhof-victoria.ch/sommer.pdf" target="_blank" data-no-swup>Season</a></li>
-          <li><a href="contact.html" data-no-swup>Contact</a></li>
-          <li><a href="https://meierhof-victoria.ch/tagesmenu.pdf" target="_blank" data-no-swup>Daily&nbsp;Menu</a></li>
-          <li><a href="https://meierhof-victoria.ch/Weinkarte.pdf" target="_blank" data-no-swup>Wine&nbsp;List</a></li>
-        </ul>
-      </nav>
-    </div>
-    <!-- top bar end -->
+      <!-- preloader end -->
+      <!-- click effect -->
+      <div class="sb-click-effect"></div>
+      <!-- loader -->
+      <div class="sb-load"></div>
 
-    <!-- dynamic content -->
-    <div id="sb-dynamic-content" class="sb-transition-fade">
-
-      <!-- banner -->
-      <section class="sb-banner">
-        <div class="sb-bg-1">
-          <div></div>
-        </div>
+      <!-- top bar -->
+      <div class="sb-top-bar-frame">
+        <div class="sb-top-bar-bg"></div>
         <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <!-- main title -->
-              <div class="sb-main-title-frame">
-                <div class="sb-main-title">
-                  <span class="sb-suptitle sb-mb-30">Welcome To!</span>
-                  <h1 class="sb-mb-30">Hotel <span>& Restaurant</span> <br>Meierhof <span>&nbsp;Victoria</span></h1>
-                  <p class="sb-text sb-text-lg sb-mb-30"><br>The perfect place to enjoy life and food.</p>
+          <div class="sb-top-bar">
+            <a href="index.html" class="sb-logo-frame">
+              <!-- logo img -->
+              <img src="img/ui/meierhof logo.png" alt="MEIERHOF VICTORIA" />
+            </a>
+            <!-- hamburger menu icon for mobile -->
+            <div class="sb-menu-toggle" id="sb-menu-toggle">&#9776;</div>
+            <!-- menu -->
+            <div class="sb-right-side" id="sb-right-side">
+              <nav id="sb-dynamic-menu" class="sb-menu-transition">
+                <ul class="sb-navigation">
+                  <li><a href="index.html" data-no-swup>Home</a></li>
+                  <li><a href="about.html" data-no-swup>About</a></li>
+                  <li>
+                    <a
+                      href="https://meierhof-victoria.ch/speise.pdf"
+                      target="_blank"
+                      data-no-swup
+                      >Menu</a
+                    >
+                  </li>
+                  <li><a href="imprint.html" data-no-swup>Imprint</a></li>
+                  <li><a href="hotel.html" data-no-swup>Hotel</a></li>
+                  <li>
+                    <a
+                      href="https://meierhof-victoria.ch/sommer.pdf"
+                      target="_blank"
+                      data-no-swup
+                      >Season</a
+                    >
+                  </li>
+                  <li><a href="contact.html" data-no-swup>Contact</a></li>
+                  <li>
+                    <a
+                      href="https://meierhof-victoria.ch/tagesmenu.pdf"
+                      target="_blank"
+                      data-no-swup
+                      >Daily&nbsp;Menu</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://meierhof-victoria.ch/Weinkarte.pdf"
+                      target="_blank"
+                      data-no-swup
+                      >Wine&nbsp;List</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar menu for mobile -->
+      <div class="sb-sidebar-menu" id="sb-sidebar-menu">
+        <span class="sb-close-btn" id="sb-close-btn">&times;</span>
+        <nav class="sb-sidebar-nav">
+          <ul>
+            <li><a href="index.html" data-no-swup>Home</a></li>
+            <li><a href="about.html" data-no-swup>About</a></li>
+            <li>
+              <a
+                href="https://meierhof-victoria.ch/speise.pdf"
+                target="_blank"
+                data-no-swup
+                >Menu</a
+              >
+            </li>
+            <li><a href="imprint.html" data-no-swup>Imprint</a></li>
+            <li><a href="hotel.html" data-no-swup>Hotel</a></li>
+            <li>
+              <a
+                href="https://meierhof-victoria.ch/sommer.pdf"
+                target="_blank"
+                data-no-swup
+                >Season</a
+              >
+            </li>
+            <li><a href="contact.html" data-no-swup>Contact</a></li>
+            <li>
+              <a
+                href="https://meierhof-victoria.ch/tagesmenu.pdf"
+                target="_blank"
+                data-no-swup
+                >Daily&nbsp;Menu</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://meierhof-victoria.ch/Weinkarte.pdf"
+                target="_blank"
+                data-no-swup
+                >Wine&nbsp;List</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- top bar end -->
+
+      <!-- dynamic content -->
+      <div id="sb-dynamic-content" class="sb-transition-fade">
+        <!-- banner -->
+        <section class="sb-banner">
+          <div class="sb-bg-1">
+            <div></div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <!-- main title -->
+                <div class="sb-main-title-frame">
+                  <div class="sb-main-title">
+                    <span class="sb-suptitle sb-mb-30">Welcome To!</span>
+                    <h1 class="sb-mb-30">
+                      Hotel <span>& Restaurant</span> <br />Meierhof
+                      <span>&nbsp;Victoria</span>
+                    </h1>
+                    <p class="sb-text sb-text-lg sb-mb-30">
+                      <br />The perfect place to enjoy life and food.
+                    </p>
+                    <!-- button -->
+                    <a
+                      href="https://meierhof-victoria.ch/speise.pdf"
+                      class="sb-btn"
+                    >
+                      <span class="sb-icon">
+                        <img src="img/ui/icons/menu.svg" alt="icon" />
+                      </span>
+                      <span>Our menu</span>
+                    </a>
+                    <!-- button end -->
+                    <!-- button -->
+                    <a href="about.html" class="sb-btn sb-btn-2 sb-btn-gray">
+                      <span class="sb-icon">
+                        <img src="img/ui/icons/house.svg" alt="icon" />
+                      </span>
+                      <span>About us</span>
+                    </a>
+                    <!-- button end -->
+                  </div>
+                </div>
+                <!-- main title end -->
+              </div>
+              <div class="col-lg-6">
+                <div class="sb-ilustration-fix">
+                  <div class="sb-illustration-1-2">
+                    <img
+                      src="img/illustrations/4.png"
+                      alt="food"
+                      class="sb-food-1"
+                    />
+                    <img
+                      src="img/illustrations/2.png"
+                      alt="food"
+                      class="sb-food-2"
+                    />
+                    <img
+                      src="img/illustrations/5.png"
+                      alt="food"
+                      class="sb-food-3"
+                    />
+                    <div class="sb-illu-dialog-1">Om-nom-nom...</div>
+                    <div class="sb-illu-dialog-2">
+                      dishes of the finest quality
+                    </div>
+                    <div class="sb-cirkle-1"></div>
+                    <div class="sb-cirkle-2"></div>
+                    <div class="sb-cirkle-3"></div>
+                    <div class="sb-cirkle-4"></div>
+                    <div class="sb-cirkle-5"></div>
+                    <img
+                      src="img/illustrations/4.svg"
+                      alt="phones"
+                      class="sb-pik-1"
+                    />
+                    <img
+                      src="img/illustrations/1.svg"
+                      alt="phones"
+                      class="sb-pik-2"
+                    />
+                    <img
+                      src="img/illustrations/5.svg"
+                      alt="phones"
+                      class="sb-pik-3"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- banner end -->
+
+        <!-- About text -->
+        <section class="sb-about-text sb-p-90-0">
+          <div class="sb-bg-1" style="margin-top: 90px">
+            <div></div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 align-self-center">
+                <div class="sb-illustration-2 sb-mb-90">
+                  <div class="sb-interior-frame">
+                    <img
+                      src="img/gallery/13.png"
+                      alt="interior"
+                      class="sb-interior"
+                      style="object-position: center"
+                    />
+                  </div>
+                  <div class="sb-square"></div>
+                  <div class="sb-cirkle-1"></div>
+                  <div class="sb-cirkle-2"></div>
+                  <div class="sb-cirkle-3"></div>
+                  <div class="sb-cirkle-4"></div>
+                  <div class="sb-experience">
+                    <div class="sb-exp-content">
+                      <p class="sb-h1 sb-mb-10">10+</p>
+                      <p class="sb-h3">Years Experience</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 align-self-center sb-mb-60">
+                <h2 class="sb-mb-60">
+                  We are doing more than <br />you expect
+                </h2>
+                <p class="sb-text sb-mb-30">
+                  Faudantium magnam error temporibus ipsam aliquid neque
+                  quibusdam dolorum, quia ea numquam assumenda mollitia dolorem
+                  impedit. Voluptate at quis exercitationem officia temporibus
+                  adipisci quae totam enim dolorum, assumenda. Sapiente soluta
+                  nostrum reprehenderit a velit obcaecati facilis vitae magnam
+                  tenetur neque vel itaque inventore eaque explicabo commodi
+                  maxime! Aliquam quasi, voluptates odio.
+                </p>
+                <p class="sb-text sb-mb-60">
+                  Consectetur adipisicing elit. Cupiditate nesciunt amet facilis
+                  numquam, nam adipisci qui voluptate voluptas enim obcaecati
+                  veritatis animi nulla, mollitia commodi quaerat ex, autem ea
+                  laborum.
+                </p>
+                <img
+                  src="img/ui/2.png"
+                  alt="Signature"
+                  class="sb-signature sb-mb-30"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- About text end -->
+
+        <!-- features -->
+        <section class="sb-features sb-p-0-30">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="sb-features-item sb-mb-60">
+                  <div class="sb-number">01</div>
+                  <div class="sb-feature-text">
+                    <h3 class="sb-mb-15">We are located in the city center</h3>
+                    <p class="sb-text">
+                      Porro nemo veniam necessitatibus praesentium eligendi rem
+                      temporibus adipisci quo modi numquam.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="sb-features-item sb-mb-60">
+                  <div class="sb-number">02</div>
+                  <div class="sb-feature-text">
+                    <h3 class="sb-mb-15">
+                      Fresh ingredients from organic farms
+                    </h3>
+                    <p class="sb-text">
+                      Porro nemo veniam necessitatibus praesentium eligendi rem
+                      temporibus adipisci quo modi numquam.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="sb-features-item sb-mb-60">
+                  <div class="sb-number">03</div>
+                  <div class="sb-feature-text">
+                    <h3 class="sb-mb-15">Own fast delivery. 30 min Maximum</h3>
+                    <p class="sb-text">
+                      Porro nemo veniam necessitatibus praesentium eligendi rem
+                      temporibus adipisci quo modi numquam.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="sb-features-item sb-mb-60">
+                  <div class="sb-number">04</div>
+                  <div class="sb-feature-text">
+                    <h3 class="sb-mb-15">Professional, experienced chefs</h3>
+                    <p class="sb-text">
+                      Porro nemo veniam necessitatibus praesentium eligendi rem
+                      temporibus adipisci quo modi numquam.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="sb-features-item sb-mb-60">
+                  <div class="sb-number">05</div>
+                  <div class="sb-feature-text">
+                    <h3 class="sb-mb-15">The highest standards of service</h3>
+                    <p class="sb-text">
+                      Porro nemo veniam necessitatibus praesentium eligendi rem
+                      temporibus adipisci quo modi numquam.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- features end -->
+
+        <!-- short menu -->
+        <section class="sb-short-menu sb-p-0-90">
+          <div class="sb-bg-2">
+            <div></div>
+          </div>
+          <div class="container">
+            <div class="sb-group-title sb-mb-30">
+              <div class="sb-left sb-mb-30">
+                <h2 class="sb-mb-30">Most <span>popular</span> dishes</h2>
+                <p class="sb-text">
+                  Consectetur numquam poro nemo veniam<br />eligendi rem
+                  adipisci quo modi.
+                </p>
+              </div>
+              <div class="sb-right sb-mb-30">
+                <!-- slider navigation -->
+                <div class="sb-slider-nav">
+                  <div class="sb-prev-btn sb-short-menu-prev">
+                    <i class="fas fa-arrow-left"></i>
+                  </div>
+                  <div class="sb-next-btn sb-short-menu-next">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+                <!-- slider navigation end -->
+                <!-- button -->
+                <!-- <a
+                  href="https://meierhof-victoria.ch/speise.pdf"
+                  class="sb-btn"
+                > -->
+                <button class="sb-btn" id="open-reservation-btn">
+                  <span class="sb-icon">
+                    <img src="img/ui/icons/menu.svg" alt="icon" />
+                  </span>
+                  <span>Full menu</span>
+                </button>
+                <!-- </a> -->
+                <!-- button end -->
+              </div>
+            </div>
+            <div class="swiper-container sb-short-menu-slider-3i">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a
+                    data-fancybox="menu"
+                    data-no-swup
+                    href="img/menu/1.jpg"
+                    class="sb-menu-item"
+                  >
+                    <div class="sb-cover-frame">
+                      <img src="img/menu/1c.jpg" alt="product" />
+                    </div>
+                    <div class="sb-card-tp">
+                      <h3 class="sb-card-title">Bruschetta pomodoro</h3>
+                      <div class="sb-price"><sub>CHF</sub> 14</div>
+                    </div>
+                    <div class="sb-description">
+                      <p class="sb-text sb-mb-15">
+                        <span
+                          >Geröstete Brotscheiben mit Tomaten, Olivenöl und
+                          Basilikum</span
+                        >.
+                      </p>
+                      <ul class="sb-stars">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    data-fancybox="menu"
+                    data-no-swup
+                    href="img/menu/2.jpg"
+                    class="sb-menu-item"
+                  >
+                    <div class="sb-cover-frame">
+                      <img src="img/menu/1b.jpg" alt="product" />
+                    </div>
+                    <div class="sb-card-tp">
+                      <h3 class="sb-card-title">
+                        Tagliere di prosciutto crudo e bufala
+                      </h3>
+                      <div class="sb-price"><sub>CHF</sub> 9</div>
+                    </div>
+                    <div class="sb-description">
+                      <p class="sb-text sb-mb-15">
+                        <span>Rohschinken mit Büffelmozzarella</span>.
+                      </p>
+                      <ul class="sb-stars">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    data-fancybox="menu"
+                    data-no-swup
+                    href="img/menu/3.jpg"
+                    class="sb-menu-item"
+                  >
+                    <div class="sb-cover-frame">
+                      <img src="img/menu/1a.jpg" alt="product" />
+                    </div>
+                    <div class="sb-card-tp">
+                      <h3 class="sb-card-title">Carpaccio di manzo</h3>
+                      <div class="sb-price"><sub>CHF</sub> 40</div>
+                    </div>
+                    <div class="sb-description">
+                      <p class="sb-text sb-mb-15">
+                        <span
+                          >Hauchdünn geschnittenes Rindfleisch an Olivenöl</span
+                        >.
+                      </p>
+                      <ul class="sb-stars">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    data-fancybox="menu"
+                    data-no-swup
+                    href="img/menu/1.jpg"
+                    class="sb-menu-item"
+                  >
+                    <div class="sb-cover-frame">
+                      <img src="img/menu/1c.jpg" alt="product" />
+                    </div>
+                    <div class="sb-card-tp">
+                      <h3 class="sb-card-title">Bruschetta pomodoro</h3>
+                      <div class="sb-price"><sub>CHF</sub> 14</div>
+                    </div>
+                    <div class="sb-description">
+                      <p class="sb-text sb-mb-15">
+                        <span
+                          >Geröstete Brotscheiben mit Tomaten, Olivenöl und
+                          Basilikum</span
+                        >.
+                      </p>
+                      <ul class="sb-stars">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    data-fancybox="menu"
+                    data-no-swup
+                    href="img/menu/2.jpg"
+                    class="sb-menu-item"
+                  >
+                    <div class="sb-cover-frame">
+                      <img src="img/menu/1b.jpg" alt="product" />
+                    </div>
+                    <div class="sb-card-tp">
+                      <h3 class="sb-card-title">
+                        Tagliere di prosciutto crudo e bufala
+                      </h3>
+                      <div class="sb-price"><sub>CHF</sub> 9</div>
+                    </div>
+                    <div class="sb-description">
+                      <p class="sb-text sb-mb-15">
+                        <span>Rohschinken mit Büffelmozzarella</span>.
+                      </p>
+                      <ul class="sb-stars">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- short menu end -->
+
+        <!-- revievs -->
+        <section class="sb-reviews sb-p-0-90">
+          <div class="container">
+            <div class="sb-group-title sb-mb-30">
+              <div class="sb-left sb-mb-30">
+                <h2 class="sb-mb-30">Reviews <span>about</span> us</h2>
+                <p class="sb-text">
+                  Consectetur numquam poro nemo veniam<br />eligendi rem
+                  adipisci quo modi.
+                </p>
+              </div>
+              <div class="sb-right sb-mb-30">
+                <!-- slider navigation -->
+                <div class="sb-slider-nav">
+                  <div class="sb-prev-btn sb-reviews-prev">
+                    <i class="fas fa-arrow-left"></i>
+                  </div>
+                  <div class="sb-next-btn sb-reviews-next">
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+                <!-- slider navigation end -->
+                <!-- button -->
+                <a href="contact.html" class="sb-btn">
+                  <span class="sb-icon">
+                    <img src="img/ui/icons/house.svg" alt="icon" />
+                  </span>
+                  <span>Contact Us</span>
+                </a>
+                <!-- button end -->
+              </div>
+            </div>
+            <div class="swiper-container sb-reviews-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="sb-review-card">
+                    <div class="sb-review-header sb-mb-15">
+                      <h4 class="sb-mb-15">Very tasty</h4>
+                      <ul class="sb-stars">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <p class="sb-text sb-mb-15">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Quis fugiat totam nobis quas unde excepturi inventore
+                      possimus laudantium provident, rem eligendi velit. Aut
+                      molestias, ipsa itaque laborum, natus tempora, ut soluta
+                      animi ducimus dignissimos deserunt doloribus in
+                      reprehenderit rem accusamus! Quibusdam labore, aliquam
+                      dolor harum!
+                    </p>
+                    <div class="sb-author-frame">
+                      <div class="sb-avatar-frame">
+                        <img src="img/faces/1.jpg" alt="Guest" />
+                      </div>
+                      <h4>Emma Newman</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sb-review-card">
+                    <div class="sb-review-header sb-mb-15">
+                      <h4 class="sb-mb-15">I have lunch here every day</h4>
+                      <ul class="sb-stars">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <p class="sb-text sb-mb-15">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Quis fugiat totam nobis quas unde excepturi inventore
+                      possimus laudantium provident, rem eligendi velit. Aut
+                      molestias, ipsa itaque laborum, natus tempora, ut soluta
+                      animi ducimus dignissimos deserunt doloribus in
+                      reprehenderit rem accusamus! Quibusdam labore, aliquam
+                      dolor harum!
+                    </p>
+                    <div class="sb-author-frame">
+                      <div class="sb-avatar-frame">
+                        <img src="img/faces/2.jpg" alt="Guest" />
+                      </div>
+                      <h4>Paul Trueman</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sb-review-card">
+                    <div class="sb-review-header sb-mb-15">
+                      <h4 class="sb-mb-15">Great service</h4>
+                      <ul class="sb-stars">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li class="sb-empty"><i class="fas fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <p class="sb-text sb-mb-15">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Quis fugiat totam nobis quas unde excepturi inventore
+                      possimus laudantium provident, rem eligendi velit. Aut
+                      molestias, ipsa itaque laborum, natus tempora, ut soluta
+                      animi ducimus dignissimos deserunt doloribus in
+                      reprehenderit rem accusamus! Quibusdam labore, aliquam
+                      dolor harum!
+                    </p>
+                    <div class="sb-author-frame">
+                      <div class="sb-avatar-frame">
+                        <img src="img/faces/3.jpg" alt="Guest" />
+                      </div>
+                      <h4>Viktoria Freeman</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sb-review-card">
+                    <div class="sb-review-header sb-mb-15">
+                      <h4 class="sb-mb-15">Meierhof victoria is amazing!</h4>
+                      <ul class="sb-stars">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <p class="sb-text sb-mb-15">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Quis fugiat totam nobis quas unde excepturi inventore
+                      possimus laudantium provident, rem eligendi velit. Aut
+                      molestias, ipsa itaque laborum, natus tempora, ut soluta
+                      animi ducimus dignissimos deserunt doloribus in
+                      reprehenderit rem accusamus! Quibusdam labore, aliquam
+                      dolor harum!
+                    </p>
+                    <div class="sb-author-frame">
+                      <div class="sb-avatar-frame">
+                        <img src="img/faces/4.jpg" alt="Guest" />
+                      </div>
+                      <h4>Audrey Oldman</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- revievs end -->
+
+        <!-- call to action -->
+        <section class="sb-call-to-action">
+          <div class="sb-bg-3"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 align-self-center">
+                <div class="sb-cta-text">
+                  <h2 class="sb-h1 sb-mb-15">Freshly <br />prepared</h2>
+                  <p class="sb-text sb-mb-30">
+                    We offer our customers a wide selection of high-quality
+                    dishes <br />so that they can enjoy the best of Italian
+                    cuisine.
+                  </p>
                   <!-- button -->
-                  <a href="https://meierhof-victoria.ch/speise.pdf" class="sb-btn">
+                  <a href="about.html" class="sb-btn">
                     <span class="sb-icon">
-                      <img src="img/ui/icons/menu.svg" alt="icon">
+                      <img src="img/ui/icons/cart.svg" alt="icon" />
                     </span>
-                    <span>Our menu</span>
+                    <span>About</span>
                   </a>
                   <!-- button end -->
                   <!-- button -->
-                  <a href="about.html" class="sb-btn sb-btn-2 sb-btn-gray">
+                  <a
+                    href="https://meierhof-victoria.ch/tagesmenu.pdf"
+                    class="sb-btn sb-btn-2 sb-btn-gray"
+                  >
                     <span class="sb-icon">
-                      <img src="img/ui/icons/house.svg" alt="icon">
+                      <img src="img/ui/icons/menu.svg" alt="icon" />
                     </span>
-                    <span>About us</span>
+                    <span> Daily Menu</span>
                   </a>
                   <!-- button end -->
                 </div>
               </div>
-              <!-- main title end -->
-            </div>
-            <div class="col-lg-6">
-              <div class="sb-ilustration-fix">
-                <div class="sb-illustration-1-2">
-                  <img src="img/illustrations/4.png" alt="food" class="sb-food-1">
-                  <img src="img/illustrations/2.png" alt="food" class="sb-food-2">
-                  <img src="img/illustrations/5.png" alt="food" class="sb-food-3">
-                  <div class="sb-illu-dialog-1"> Om-nom-nom...</div>
-                  <div class="sb-illu-dialog-2">dishes of the finest quality</div>
+              <div class="col-lg-6">
+                <div class="sb-illustration-8">
+                  <img
+                    src="img/illustrations/ndes.png"
+                    alt="reserved"
+                    class="sb-reserved"
+                  />
                   <div class="sb-cirkle-1"></div>
                   <div class="sb-cirkle-2"></div>
                   <div class="sb-cirkle-3"></div>
                   <div class="sb-cirkle-4"></div>
                   <div class="sb-cirkle-5"></div>
-                  <img src="img/illustrations/4.svg" alt="phones" class="sb-pik-1">
-                  <img src="img/illustrations/1.svg" alt="phones" class="sb-pik-2">
-                  <img src="img/illustrations/5.svg" alt="phones" class="sb-pik-3">
+                  <img
+                    src="img/illustrations/2.svg"
+                    alt="icon"
+                    class="sb-pik-2"
+                  />
+                  <img
+                    src="img/illustrations/3.svg"
+                    alt="icon"
+                    class="sb-pik-3"
+                  />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- banner end -->
+        </section>
+        <!-- call to action end -->
 
-      <!-- About text -->
-      <section class="sb-about-text sb-p-90-0">
-        <div class="sb-bg-1" style="margin-top: 90px">
-          <div></div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 align-self-center">
-              <div class="sb-illustration-2 sb-mb-90">
-                <div class="sb-interior-frame">
-                  <img src="img/gallery/13.png" alt="interior" class="sb-interior" style="object-position: center">
-                </div>
-                <div class="sb-square"></div>
-                <div class="sb-cirkle-1"></div>
-                <div class="sb-cirkle-2"></div>
-                <div class="sb-cirkle-3"></div>
-                <div class="sb-cirkle-4"></div>
-                <div class="sb-experience">
-                  <div class="sb-exp-content">
-                    <p class="sb-h1 sb-mb-10">10+</p>
-                    <p class="sb-h3">Years Experience</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 align-self-center sb-mb-60">
-              <h2 class="sb-mb-60">We are doing more than <br>you expect</h2>
-              <p class="sb-text sb-mb-30">Faudantium magnam error temporibus ipsam aliquid neque quibusdam dolorum, quia ea numquam assumenda mollitia dolorem impedit. Voluptate at quis exercitationem officia temporibus adipisci quae totam enim
-                dolorum,
-                assumenda. Sapiente soluta nostrum reprehenderit a velit obcaecati facilis vitae magnam tenetur
-                neque vel itaque inventore eaque explicabo commodi maxime! Aliquam quasi, voluptates odio.</p>
-              <p class="sb-text sb-mb-60">Consectetur adipisicing elit. Cupiditate nesciunt amet facilis numquam, nam adipisci qui voluptate voluptas enim obcaecati veritatis animi nulla, mollitia commodi quaerat ex, autem ea
-                laborum.</p>
-              <img src="img/ui/2.png" alt="Signature" class="sb-signature sb-mb-30">
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- About text end -->
-
-      <!-- features -->
-      <section class="sb-features sb-p-0-30">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="sb-features-item sb-mb-60">
-                <div class="sb-number">01</div>
-                <div class="sb-feature-text">
-                  <h3 class="sb-mb-15">We are located in the city center</h3>
-                  <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="sb-features-item sb-mb-60">
-                <div class="sb-number">02</div>
-                <div class="sb-feature-text">
-                  <h3 class="sb-mb-15">Fresh ingredients from organic farms</h3>
-                  <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="sb-features-item sb-mb-60">
-                <div class="sb-number">03</div>
-                <div class="sb-feature-text">
-                  <h3 class="sb-mb-15">Own fast delivery. 30 min Maximum</h3>
-                  <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="sb-features-item sb-mb-60">
-                <div class="sb-number">04</div>
-                <div class="sb-feature-text">
-                  <h3 class="sb-mb-15">Professional, experienced chefs</h3>
-                  <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="sb-features-item sb-mb-60">
-                <div class="sb-number">05</div>
-                <div class="sb-feature-text">
-                  <h3 class="sb-mb-15">The highest standards of service</h3>
-                  <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- features end -->
-
-      <!-- short menu -->
-      <section class="sb-short-menu sb-p-0-90">
-        <div class="sb-bg-2">
-          <div></div>
-        </div>
-        <div class="container">
-          <div class="sb-group-title sb-mb-30">
-            <div class="sb-left sb-mb-30">
-              <h2 class="sb-mb-30">Most <span>popular</span> dishes</h2>
-              <p class="sb-text">Consectetur numquam poro nemo veniam<br>eligendi rem adipisci quo modi.</p>
-            </div>
-            <div class="sb-right sb-mb-30">
-              <!-- slider navigation -->
-              <div class="sb-slider-nav">
-                <div class="sb-prev-btn sb-short-menu-prev"><i class="fas fa-arrow-left"></i></div>
-                <div class="sb-next-btn sb-short-menu-next"><i class="fas fa-arrow-right"></i></div>
-              </div>
-              <!-- slider navigation end -->
-              <!-- button -->
-              <a href="https://meierhof-victoria.ch/speise.pdf" class="sb-btn">
-                <span class="sb-icon">
-                  <img src="img/ui/icons/menu.svg" alt="icon">
-                </span>
-                <span>Full menu</span>
+        <!-- footer -->
+        <footer>
+          <div class="container">
+            <div class="sb-footer-frame">
+              <a href="index.html" class="sb-logo-frame">
+                <!-- logo img -->
+                <img src="img/ui/meierhof logo.png" alt="meierhof victoria" />
               </a>
-              <!-- button end -->
-            </div>
-          </div>
-          <div class="swiper-container sb-short-menu-slider-3i">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a data-fancybox="menu" data-no-swup href="img/menu/1.jpg" class="sb-menu-item">
-                  <div class="sb-cover-frame">
-                    <img src="img/menu/1c.jpg" alt="product">
-                  </div>
-                  <div class="sb-card-tp">
-                    <h3 class="sb-card-title">Bruschetta pomodoro</h3>
-                    <div class="sb-price"><sub>CHF</sub> 14</div>
-                  </div>
-                  <div class="sb-description">
-                    <p class="sb-text sb-mb-15"><span>Geröstete Brotscheiben mit Tomaten, Olivenöl und Basilikum</span>.</p>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a data-fancybox="menu" data-no-swup href="img/menu/2.jpg" class="sb-menu-item">
-                  <div class="sb-cover-frame">
-                    <img src="img/menu/1b.jpg" alt="product">
-                  </div>
-                  <div class="sb-card-tp">
-                    <h3 class="sb-card-title">Tagliere di prosciutto crudo e bufala</h3>
-                    <div class="sb-price"><sub>CHF</sub> 9</div>
-                  </div>
-                  <div class="sb-description">
-                    <p class="sb-text sb-mb-15"><span>Rohschinken mit Büffelmozzarella</span>.</p>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a data-fancybox="menu" data-no-swup href="img/menu/3.jpg" class="sb-menu-item">
-                  <div class="sb-cover-frame">
-                    <img src="img/menu/1a.jpg" alt="product">
-                  </div>
-                  <div class="sb-card-tp">
-                    <h3 class="sb-card-title">Carpaccio di manzo</h3>
-                    <div class="sb-price"><sub>CHF</sub> 40</div>
-                  </div>
-                  <div class="sb-description">
-                    <p class="sb-text sb-mb-15"><span>Hauchdünn geschnittenes Rindfleisch an Olivenöl</span>.</p>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a data-fancybox="menu" data-no-swup href="img/menu/1.jpg" class="sb-menu-item">
-                  <div class="sb-cover-frame">
-                    <img src="img/menu/1c.jpg" alt="product">
-                  </div>
-                  <div class="sb-card-tp">
-                    <h3 class="sb-card-title">Bruschetta pomodoro</h3>
-                    <div class="sb-price"><sub>CHF</sub> 14</div>
-                  </div>
-                  <div class="sb-description">
-                    <p class="sb-text sb-mb-15"><span>Geröstete Brotscheiben mit Tomaten, Olivenöl und Basilikum</span>.</p>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a data-fancybox="menu" data-no-swup href="img/menu/2.jpg" class="sb-menu-item">
-                  <div class="sb-cover-frame">
-                    <img src="img/menu/1b.jpg" alt="product">
-                  </div>
-                  <div class="sb-card-tp">
-                    <h3 class="sb-card-title">Tagliere di prosciutto crudo e bufala</h3>
-                    <div class="sb-price"><sub>CHF</sub> 9</div>
-                  </div>
-                  <div class="sb-description">
-                    <p class="sb-text sb-mb-15"><span>Rohschinken mit Büffelmozzarella</span>.</p>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                </a>
+              <ul class="sb-social">
+                <li>
+                  <a href="https://www.instagram.com/p/CTxCVFKqEhR/"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/restauranthotelmeierhofvictoria"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </li>
+              </ul>
+              <div class="sb-copy">
+                &copy; 2024 Victoria. IMPRESSUM. Design by Spektre
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- short menu end -->
+        </footer>
+        <!-- footer end -->
 
-      <!-- revievs -->
-      <section class="sb-reviews sb-p-0-90">
-        <div class="container">
-          <div class="sb-group-title sb-mb-30">
-            <div class="sb-left sb-mb-30">
-              <h2 class="sb-mb-30">Reviews <span>about</span> us</h2>
-              <p class="sb-text">Consectetur numquam poro nemo veniam<br>eligendi rem adipisci quo modi.</p>
-            </div>
-            <div class="sb-right sb-mb-30">
-              <!-- slider navigation -->
-              <div class="sb-slider-nav">
-                <div class="sb-prev-btn sb-reviews-prev"><i class="fas fa-arrow-left"></i></div>
-                <div class="sb-next-btn sb-reviews-next"><i class="fas fa-arrow-right"></i></div>
-              </div>
-              <!-- slider navigation end -->
-              <!-- button -->
-              <a href="contact.html" class="sb-btn">
-                <span class="sb-icon">
-                  <img src="img/ui/icons/house.svg" alt="icon">
-                </span>
-                <span>Contact Us</span>
-              </a>
-              <!-- button end -->
-            </div>
+        <div class="overlay"></div>
+        <div class="overlay loading">
+          <div class="loader"></div>
+        </div>
+        <div class="modals starting-modal">
+          <div class="modal-top">
+            <button class="close-btn">Close</button>
           </div>
-          <div class="swiper-container sb-reviews-slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="sb-review-card">
-                  <div class="sb-review-header sb-mb-15">
-                    <h4 class="sb-mb-15">Very tasty</h4>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                  <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis fugiat totam nobis quas unde excepturi inventore possimus laudantium provident, rem eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                    tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit rem accusamus! Quibusdam labore, aliquam dolor harum!</p>
-                  <div class="sb-author-frame">
-                    <div class="sb-avatar-frame">
-                      <img src="img/faces/1.jpg" alt="Guest">
-                    </div>
-                    <h4>Emma Newman</h4>
-                  </div>
+          <div class="modal-middle">
+            <div class="d-flex justify-content-center py-sm">
+              <img
+                src="img/ui/meierhof logo.png"
+                alt="MEIERHOF VICTORIA"
+                width="200"
+              />
+            </div>
+
+            <div class="text-center">Reservation details</div>
+            <div class="px-4 mt-4 border border-dark mx-2 border-2">
+              <div
+                class="d-flex justify-content-between py-2 border-bottom border-secondary"
+              >
+                <div>Date</div>
+                <div class="open-date">
+                  <span class="date-div"> 17/17/2024 </span>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    width="20"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="sb-review-card">
-                  <div class="sb-review-header sb-mb-15">
-                    <h4 class="sb-mb-15">I have lunch here every day</h4>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                  <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis fugiat totam nobis quas unde excepturi inventore possimus laudantium provident, rem eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                    tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit rem accusamus! Quibusdam labore, aliquam dolor harum!</p>
-                  <div class="sb-author-frame">
-                    <div class="sb-avatar-frame">
-                      <img src="img/faces/2.jpg" alt="Guest">
-                    </div>
-                    <h4>Paul Trueman</h4>
-                  </div>
+
+              <div
+                class="d-flex justify-content-between py-2 border-bottom border-secondary"
+              >
+                <div>Time</div>
+                <div class="open-time">
+                  <span class="time-div"></span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    width="20"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="sb-review-card">
-                  <div class="sb-review-header sb-mb-15">
-                    <h4 class="sb-mb-15">Great service</h4>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li class="sb-empty"><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                  <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis fugiat totam nobis quas unde excepturi inventore possimus laudantium provident, rem eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                    tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit rem accusamus! Quibusdam labore, aliquam dolor harum!</p>
-                  <div class="sb-author-frame">
-                    <div class="sb-avatar-frame">
-                      <img src="img/faces/3.jpg" alt="Guest">
-                    </div>
-                    <h4>Viktoria Freeman</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="sb-review-card">
-                  <div class="sb-review-header sb-mb-15">
-                    <h4 class="sb-mb-15">Meierhof victoria is amazing!</h4>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                  <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis fugiat totam nobis quas unde excepturi inventore possimus laudantium provident, rem eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                    tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit rem accusamus! Quibusdam labore, aliquam dolor harum!</p>
-                  <div class="sb-author-frame">
-                    <div class="sb-avatar-frame">
-                      <img src="img/faces/4.jpg" alt="Guest">
-                    </div>
-                    <h4>Audrey Oldman</h4>
-                  </div>
+
+              <div class="d-flex justify-content-between py-2">
+                <div>People</div>
+                <div class="open-people">
+                  For <span class="people-number"></span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    width="20"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- revievs end -->
 
-      <!-- call to action -->
-      <section class="sb-call-to-action">
-        <div class="sb-bg-3"></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 align-self-center">
-              <div class="sb-cta-text">
-                <h2 class="sb-h1 sb-mb-15">Freshly <br>prepared</h2>
-                <p class="sb-text sb-mb-30">We offer our customers a wide selection of high-quality dishes <br>so that they can enjoy the best of Italian cuisine.</p>
-                <!-- button -->
-                <a href="about.html" class="sb-btn">
-                  <span class="sb-icon">
-                    <img src="img/ui/icons/cart.svg" alt="icon">
-                  </span>
-                  <span>About</span>
-                </a>
-                <!-- button end -->
-                <!-- button -->
-                <a href="https://meierhof-victoria.ch/tagesmenu.pdf" class="sb-btn sb-btn-2 sb-btn-gray">
-                  <span class="sb-icon">
-                    <img src="img/ui/icons/menu.svg" alt="icon">
-                  </span>
-                  <span> Daily Menu</span>
-                </a>
-                <!-- button end -->
+          <div class="modal-bottom">
+            <button class="cols-2 book-btn">
+              <div>Book</div>
+              <div class="time-and-date">
+                <span class="date-div">07.07.2024</span>
+                <span class="time-div">11:00</span>
+                for
+                <span class="people-number"></span>
               </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="sb-illustration-8">
-                <img src="img/illustrations/ndes.png" alt="reserved" class="sb-reserved">
-                <div class="sb-cirkle-1"></div>
-                <div class="sb-cirkle-2"></div>
-                <div class="sb-cirkle-3"></div>
-                <div class="sb-cirkle-4"></div>
-                <div class="sb-cirkle-5"></div>
-                <img src="img/illustrations/2.svg" alt="icon" class="sb-pik-2">
-                <img src="img/illustrations/3.svg" alt="icon" class="sb-pik-3">
-              </div>
-            </div>
+            </button>
           </div>
         </div>
-      </section>
-      <!-- call to action end -->
 
-      <!-- footer -->
-      <footer>
-        <div class="container">
-          <div class="sb-footer-frame">
-            <a href="index.html" class="sb-logo-frame">
-              <!-- logo img -->
-              <img src="img/ui/meierhof logo.png" alt="meierhof victoria">
-            </a>
-            <ul class="sb-social">
-              <li><a href="https://www.instagram.com/p/CTxCVFKqEhR/"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="https://www.facebook.com/restauranthotelmeierhofvictoria"><i class="fab fa-facebook-f"></i></a></li>
-            </ul>
-            <div class="sb-copy">&copy; 2024 Victoria. IMPRESSUM. Design by Spektre</div>
+        <!-- DATE -->
+        <div class="modals date-modal">
+          <div class="modal-top">
+            <button class="close-btn">Close</button>
+          </div>
+
+          <div class="mt-4">
+            <div class="d-flex justify-content-around">
+              <button class="prev-month month-btn">&lt;</button>
+              <div class="current-month">July</div>
+
+              <button class="next-month month-btn">&gt;</button>
+            </div>
+
+            <div class="calendar">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Th</div>
+              <div>Fr</div>
+              <div>Sat</div>
+            </div>
+            <div id="calendar" class="calendar"></div>
+          </div>
+
+          <div class="modal-bottom">
+            <button class="date-cancel-btn">Back/Cancel</button>
+            <button class="date-set-btn">Set</button>
           </div>
         </div>
-      </footer>
-      <!-- footer end -->
 
-    </div>
-    <!-- dynamic content end -->
+        <!-- TIME -->
+        <div class="modals time-modal">
+          <div class="modal-top">
+            <button class="close-btn">Close</button>
+          </div>
 
-    <!-- discount popup
+          <div class="mt-4 d-flex justify-content-center">
+            <div>
+              <div class="text-center">Select Time:</div>
+              <div id="time-picker-container"></div>
+            </div>
+          </div>
+
+          <div class="modal-bottom">
+            <button class="time-cancel-btn">Back/Cancel</button>
+            <button class="time-set-btn">Set</button>
+          </div>
+        </div>
+
+        <!-- PEOPLE -->
+        <div class="modals people-modal">
+          <div class="modal-top">
+            <button class="close-btn">Close</button>
+          </div>
+
+          <div class="modal-middle px-2">
+            <div class="text-center py-2">Select a number of people</div>
+            <div class="peoples"></div>
+            <div class="px-4 border-bottom border-dark py-3 single-person flex">
+              <input type="number" class="people-input" /> People
+            </div>
+          </div>
+
+          <div class="modal-bottom">
+            <button class="people-cancel-btn">Back/Cancel</button>
+            <button class="people-set-btn">Set</button>
+          </div>
+        </div>
+
+        <!-- CANNOR OFFER SEAT MODAL -->
+        <div class="modals small cannot-offer-seat-modal">
+          <div class="text-center p-3">
+            Sorry, unfortunately we cannot offer you any seats at that time. We
+            could provide you our next available times.
+          </div>
+
+          <div class="modal-bottom">
+            <button class="cols-2 py-2 open-more-time">OK</button>
+          </div>
+        </div>
+
+        <!-- DELAY MODAL -->
+        <div class="modals small cannot-offer-seat-modal">
+          <div class="text-center p-3">
+            In case of a delay please inform us before your reservation. If you
+            do not show up within 15 minutes, we allow our self to give your
+            table away.
+          </div>
+          <div class="text-center p-3">Thank you for your understanding..</div>
+
+          <div class="modal-bottom">
+            <button class="py-3">Cancel/Back</button>
+            <button class="py-3">Accept</button>
+          </div>
+        </div>
+
+        <div class="modals small more-than-modal">
+          <div class="text-center p-3">
+            You want to book for more than 10 persons? Please call us +41 44 725
+            25 25.
+          </div>
+
+          <div class="modal-bottom">
+            <button class="py-3 cols-2 more-than-btn">OK</button>
+          </div>
+        </div>
+
+        <div class="modals small success-modal">
+          <div class="text-center p-3">
+            <div>Congratulations</div>
+            <div>Your reservations has been made succesfully</div>
+          </div>
+
+          <div class="modal-bottom">
+            <button class="py-3 cols-2 success-btn">OK</button>
+          </div>
+        </div>
+
+        <div class="modals available-modal">
+          <div class="modal-top">
+            <button class="close-btn">Close</button>
+          </div>
+
+          <div class="modal-middle px-2">
+            <div class="text-center py-2">
+              Please pick one of the available slots:
+            </div>
+
+            <div id="daysContainer"></div>
+
+            <div class="text-center py-1 available-date">Wednesday 10 July</div>
+
+            <div>
+              <div
+                class="d-flex justify-content-between px-2 py-2 available-sch"
+              >
+                <div class="flex">
+                  Lunch <span class="fw-bold ml-2">11:30 - 16:00</span>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  width="20"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </div>
+              <div class="available-grid">
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+              </div>
+            </div>
+
+            <div>
+              <div
+                class="d-flex justify-content-between px-2 py-2 available-sch"
+              >
+                <div class="flex">
+                  Dinner <span class="fw-bold ml-2">11:30 - 16:00</span>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  width="20"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </div>
+
+              <div class="available-grid">
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+                <div class="single-time-available">11:00</div>
+              </div>
+            </div>
+          </div> -->
+          </div>
+        </div>
+
+        <div class="modals information-modal">
+          <div class="modal-top">
+            <button class="close-btn">Close</button>
+          </div>
+
+          <div class="modal-middle px-2">
+            <div class="d-flex justify-content-center py-sm">
+              <img
+                src="img/ui/meierhof logo.png"
+                alt="MEIERHOF VICTORIA"
+                width="200"
+              />
+            </div>
+
+            <div class="book-details text-center">
+              <span class="date-div"> </span>&nbsp;<span
+                class="time-div"
+              ></span>
+              for
+              <span class="people-number"></span>
+            </div>
+
+            <div class="text-center py-2">Personal information</div>
+
+            <form action="" class="mb-3" onsubmit="(e)=>{e.preventDefault()}">
+              <input
+                type="text"
+                name="first-name"
+                id="first-name"
+                class="line-input"
+                placeholder="First name"
+                required
+              />
+              <input
+                type="text"
+                name="last-name"
+                id="last-name"
+                class="line-input"
+                placeholder="Last name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="line-input"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                class="line-input"
+                placeholder="Phone"
+                required
+              />
+              <input
+                type="text"
+                name="company"
+                id="company"
+                class="line-input"
+                placeholder="Company"
+              />
+            </form>
+          </div>
+
+          <div class="modal-bottom">
+            <button class="info-back-btn">Back</button>
+            <button class="info-book-btn">Book</button>
+          </div>
+        </div>
+      </div>
+      <!-- dynamic content end -->
+
+      <!-- discount popup
     <div class="sb-popup-frame">
       <div class="sb-popup-body">
         <div class="sb-close-popup">+</div>
@@ -609,33 +1241,34 @@
       </div>
     </div>
    discount popup end -->
+    </div>
+    <!-- app wrapper end -->
 
-  </div>
-  <!-- app wrapper end -->
+    <!-- jquery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- smooth scroll js -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- datepicker js -->
+    <script src="js/plugins/datepicker.js"></script>
+    <!-- isotope js -->
+    <script src="js/plugins/isotope.js"></script>
+    <!-- sticky -->
+    <script src="js/plugins/sticky.js"></script>
+    <!-- mapbox js -->
+    <script src="js/plugins/mapbox.min.js"></script>
+    <!-- fancybox js -->
+    <script src="js/plugins/fancybox.min.js"></script>
+    <!-- starbelly js -->
+    <script src="js/main.js"></script>
 
-  <!-- jquery js -->
-  <script src="js/plugins/jquery.min.js"></script>
-  <!-- smooth scroll js -->
-  <script src="js/plugins/smooth-scroll.js"></script>
-  <!-- swup js -->
-  <script src="js/plugins/swup.min.js"></script>
-  <!-- swiper js -->
-  <script src="js/plugins/swiper.min.js"></script>
-  <!-- datepicker js -->
-  <script src="js/plugins/datepicker.js"></script>
-  <!-- isotope js -->
-  <script src="js/plugins/isotope.js"></script>
-  <!-- sticky -->
-  <script src="js/plugins/sticky.js"></script>
-  <!-- mapbox js -->
-  <script src="js/plugins/mapbox.min.js"></script>
-  <!-- fancybox js -->
-  <script src="js/plugins/fancybox.min.js"></script>
-  <!-- starbelly js -->
-  <script src="js/main.js"></script>
-  <script>
-    
-  </script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
 
+    <script src="./js/timepicker.js"></script>
+    <script src="./js/reservation.js"></script>
+    <script></script>
+  </body>
 </html>
