@@ -48,8 +48,8 @@ const emailInput = document.querySelector("#email");
 const phoneInput = document.querySelector("#phone");
 const companyInput = document.querySelector("#company");
 
-// const BASE_URL = "https://reservation-be-1.onrender.com";
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = "https://reservation-be-1.onrender.com";
+// const BASE_URL = "http://localhost:4000";
 
 const headers = {
   "Content-Type": "application/json",
