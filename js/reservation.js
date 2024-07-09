@@ -48,8 +48,9 @@ const emailInput = document.querySelector("#email");
 const phoneInput = document.querySelector("#phone");
 const companyInput = document.querySelector("#company");
 
-const BASE_URL = "https://reservation-be-1.onrender.com";
-// const BASE_URL = "http://localhost:4000";
+// const BASE_URL = "https://reservation-be-1.onrender.com";
+const BASE_URL = "http://localhost:4000";
+
 const headers = {
   "Content-Type": "application/json",
 };
@@ -106,11 +107,11 @@ const getReservationsForTheWeek = () => {
       return res.json();
     })
     .then((data) => {
+      loadingOverlay.classList.remove("active");
       weekReserves = data;
       appendDates();
     });
 };
-getReservationsForTheWeek();
 
 const placeBooking = () => {
   const firstName = firstNameInput.value;
@@ -143,11 +144,16 @@ const placeBooking = () => {
     .then((res) => {
       return res.json();
     })
-    .then(() => {
-      loadingOverlay.classList.remove("active");
-      successModal.classList.add("active");
+    .then((data) => {
+      if (data.msg === "Success") {
+        successModal.classList.add("active");
+      } else {
+        cannotPlaceModal.classList.add("active");
+      }
+
       informationModal.classList.remove("active");
-      getReservationsForTheWeek();
+      loadingOverlay.classList.remove("active");
+      // getReservationsForTheWeek();
     });
 };
 
@@ -197,6 +203,8 @@ infoBookBtn.addEventListener("click", () => {
 });
 
 openMoreTimeBtn.addEventListener("click", () => {
+  getReservationsForTheWeek();
+  loadingOverlay.classList.add("active");
   availaleModal.classList.add("active");
   cannotPlaceModal.classList.remove("active");
 });
